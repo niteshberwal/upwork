@@ -1,6 +1,5 @@
 ---
 - name: "Set up a Matrix server"
-#  hosts: localhost
   hosts: "{{ target if target is defined else 'matrix_servers' }}"
   become: true
 
@@ -38,9 +37,11 @@
     - matrix-bridge-sms
     - matrix-bridge-heisenbridge
     - matrix-bot-matrix-reminder-bot
+    - matrix-bot-honoroit
     - matrix-bot-go-neb
     - matrix-bot-mjolnir
     - matrix-synapse
+    - matrix-dendrite
     - matrix-synapse-admin
     - matrix-prometheus-node-exporter
     - matrix-prometheus
@@ -48,6 +49,7 @@
     - matrix-registration
     - matrix-client-element
     - matrix-client-hydrogen
+    - matrix-client-cinny
     - matrix-jitsi
     - matrix-ma1sd
     - matrix-dimension
